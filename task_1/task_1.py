@@ -21,7 +21,7 @@ def total_salary(path):
         return 0, 0
 
 if __name__ == "__main__":  
-    total, average = total_salary('goit-pycore-hm-04\\path.txt')
+    total, average = total_salary('C:\My_Repo\goit-pycore-hm-04\path.txt')
     print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
 
   
