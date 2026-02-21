@@ -5,7 +5,8 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-def visualize_directory_structure(path: Path, indent: str = ""):
+
+def visualize_directory_structure(path: Path, indent: str = "") -> None:
     """Рекурсивно виводить структуру директорії з кольоровим маркуванням."""
     try:
         items = sorted(path.iterdir(), key=lambda x: (x.is_file(), x.name.lower()))
@@ -26,8 +27,8 @@ def visualize_directory_structure(path: Path, indent: str = ""):
     except OSError as e:
         print(f"{indent}{Fore.RED}![Помилка: {e}]!")
 
-def main():
- 
+
+def main() -> None:
     if len(sys.argv) < 2:
         print(f"{Fore.YELLOW}Використання: python main.py /шлях/до/директорії")
         return
@@ -44,6 +45,7 @@ def main():
 
     print(f"{Fore.CYAN}{Style.BRIGHT}📦 {root_path.name}")
     visualize_directory_structure(root_path)
+
 
 if __name__ == "__main__":
     main()
